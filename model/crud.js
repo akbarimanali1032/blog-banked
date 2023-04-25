@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const crudSchema = new mongoose.Schema({
+const blogListsSchema = new mongoose.Schema({
     titel: {
         type: String,
         required: true,
@@ -9,8 +9,8 @@ const crudSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    path: {
-        type: Number,
+    type: {
+        type: String,
         required: true,
     },
     fileprth: {
@@ -19,4 +19,4 @@ const crudSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('cruds', crudSchema);
+module.exports = mongoose.model('blogLists', blogListsSchema);

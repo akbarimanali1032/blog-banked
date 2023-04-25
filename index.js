@@ -4,15 +4,17 @@ const app = express();
 
 const cors = require('cors');
 app.use(cors());
+
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
-require('./model/crud')
 
-app.use('/public', express.static('public'));
+require('./db/conne');
 
-app.listen(5000, () => {
-    console.log("hello ");
+app.use('/public/', express.static('public'));
+
+app.listen(1030, () => {
+    console.log("Sever Start...");
 });
 
 app.use('/api', require('./api/crudapi'));
